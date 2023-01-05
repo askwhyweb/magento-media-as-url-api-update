@@ -1,0 +1,22 @@
+{
+    "name": "fivetech/module-galleryimages",
+    "description": "FiveTech Gallery Images API update to accept remote URLs in filename",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Farhan Islam",
+            "email": "farhan@orvisoft.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "FiveTech\\GalleryImages\\": ""
+        }
+    }
+}
