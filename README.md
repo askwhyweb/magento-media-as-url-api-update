@@ -5,7 +5,7 @@
  - [Main Functionalities](#main-functionalities)
  - [Installation](#installation)
  - [Specifications](#specifications)
-
+ - [How to use](#how-to-use)
 
 ## Main Functionalities
 Gallery Images update using URL.
@@ -38,3 +38,34 @@ Gallery Images update using URL.
  - Plugin
 	- aroundProcessMediaGallery - Magento\Catalog\Model\ProductRepository\MediaGalleryProcessor > FiveTech\GalleryImages\Plugin\Magento\Catalog\Model\ProductRepository\MediaGalleryProcessor
 
+## How to use
+
+PUT Request to URL: `{site-url}/rest/V1/products/{your-product-sku}`
+
+Body Request: 
+```json
+{
+    "product": {
+        "sku": "{your-product-sku}",
+        "mediaGalleryEntries": [
+            {
+                "mediaType": "image",
+                "label": "Test Product Image",
+                "position": 1,
+                "disabled": false,
+                "file": "{your-url-to-image}", // https://d3708nxi8xs1qx.cloudfront.net/Image1.png
+                "types": [
+                    "image",
+                    "thumbnail",
+                    "small_image"
+                ],
+                "content": {
+                    "base64EncodedData": "",
+                    "type": "image/png", // keep it as per format e.g. png
+                    "name": "desired_filename.png" // your-desired-filename
+                }
+            }
+        ]
+    }
+}
+```
